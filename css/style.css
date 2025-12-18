@@ -313,7 +313,7 @@ h2 {
 .logo-track {
   display: flex;
   gap: 120px; /* 로고 간격 */
-  animation: slideLeft 20s linear infinite; /* 속도 조절 */
+  animation: slideLeft 50s linear infinite; /* 속도 조절 */
   width: max-content; /* 길이에 맞게 */
 }
 

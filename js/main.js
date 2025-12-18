@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 애니메이션 프레임 루프
   let position = 0;
-  const speed = 0.5; // ← ✅ 속도 조절 (숫자가 클수록 빠름)
+  const speed = 2; // ← ✅ 속도 조절 (숫자가 클수록 빠름)
 
   function animate() {
     position -= speed;
