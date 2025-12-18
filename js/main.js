@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
    const logos = track.innerHTML;
 
   // ✅ 로고들을 두세트 이상 이어붙여서 무한 루프처럼 보이게
-  track.innerHTML = logos + logos + logos; // 세 번 반복
+  track.innerHTML = logos + logos + logos + logos + logos; // 세 번 반복
 
   // ✅ clone 생성
   const clone = track.cloneNode(true);

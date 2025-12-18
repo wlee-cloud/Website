@@ -290,7 +290,7 @@ h2 {
 
 /* ===== FEATURED LOGOS SECTION ===== */
 .featured-logos {
-  padding: 100px 60px;
+  padding: 80px 60px 30px;
   background: var(--white);
   text-align: center;
   overflow: hidden;
@@ -324,7 +324,7 @@ h2 {
 }
 
 .logo-track img {
-  height: 110px;
+  height: 150px;
   width: auto;
   object-fit: contain;
   flex-shrink: 0; /* ✅ 크기 줄지 않게 */
