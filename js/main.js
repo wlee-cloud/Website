@@ -49,20 +49,25 @@ disciplineItems.forEach(item => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.querySelector(".logo-track");
-  const clone = track.cloneNode(true); // 트랙 전체 복제
-  track.parentElement.appendChild(clone); // 바로 뒤에 복제 추가
+  const clone = track.cloneNode(true);
+  const slider = track.parentElement;
 
-  // 두 트랙이 자연스럽게 이어지도록 스타일 조정
-  clone.style.position = "absolute";
+  slider.appendChild(clone);
+
+  // ✅ 두 트랙을 나란히 배치
   clone.style.left = `${track.scrollWidth}px`;
+  clone.style.position = "absolute";
+  clone.style.top = "0";
 
-  // 애니메이션 프레임 루프
   let position = 0;
-  const speed = 2; // ← ✅ 속도 조절 (숫자가 클수록 빠름)
+  const speed = 1; // 숫자가 커질수록 빨라짐 (예: 1, 2, 3)
 
   function animate() {
     position -= speed;
-    if (Math.abs(position) >= track.scrollWidth) position = 0;
+
+    if (Math.abs(position) >= track.scrollWidth) {
+      position = 0; // 처음으로 리셋
+    }
 
     track.style.transform = `translateX(${position}px)`;
     clone.style.transform = `translateX(${position}px)`;
