@@ -49,31 +49,44 @@ disciplineItems.forEach(item => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.querySelector(".logo-track");
-  const clone = track.cloneNode(true);
   const slider = track.parentElement;
+   const logos = track.innerHTML;
 
+  // ✅ 로고들을 두세트 이상 이어붙여서 무한 루프처럼 보이게
+  track.innerHTML = logos + logos + logos; // 세 번 반복
+
+  // ✅ clone 생성
+  const clone = track.cloneNode(true);
   slider.appendChild(clone);
 
-  // ✅ 두 트랙을 나란히 배치
-  clone.style.left = `${track.scrollWidth}px`;
+  // ✅ 두 트랙 사이 간격 추가
+  const gap = 120; // 로고 사이 gap과 동일하게 유지
+  const trackWidth = Math.round(track.getBoundingClientRect().width);
+
+  // ✅ clone 위치 지정
   clone.style.position = "absolute";
+  clone.style.left = `${trackWidth + gap}px`; // 👈 여기가 핵심!
   clone.style.top = "0";
 
+  // ✅ 애니메이션
   let position = 0;
-  const speed = 1; // 숫자가 커질수록 빨라짐 (예: 1, 2, 3)
+  const speed = 0.7; // 속도 조절
 
   function animate() {
     position -= speed;
 
-    if (Math.abs(position) >= track.scrollWidth) {
-      position = 0; // 처음으로 리셋
+    // 한 트랙이 완전히 지나가면 리셋
+    if (Math.abs(position) >= trackWidth + gap) {
+      position = 0;
     }
 
-    track.style.transform = `translateX(${position}px)`;
-    clone.style.transform = `translateX(${position}px)`;
+    const translateValue = Math.round(position);
+    track.style.transform = `translateX(${translateValue}px)`;
+    clone.style.transform = `translateX(${translateValue}px)`;
 
     requestAnimationFrame(animate);
   }
 
   animate();
 });
+

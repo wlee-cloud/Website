@@ -307,24 +307,27 @@ h2 {
 .logo-slider {
   width: 100%;
   overflow: hidden;
-  position: relative; /* JS 복제용 기준 */
-  height: 140px; /* ✅ 로고 높이에 맞게 고정 */
+  position: relative;
+  height: 140px;
 }
 
 .logo-track {
   display: flex;
-  gap: 120px;
-  width: max-content;
-  position: absolute; /* ✅ JS로 위치 제어 */
+  align-items: center;
+  justify-content: flex-start;
+  gap: 120px; /* ✅ 간격 일정하게 */
+  position: absolute;
   top: 0;
   left: 0;
-  will-change: transform; /* 성능 향상 */
+  will-change: transform;
+  animation: scroll 40s linear infinite; /* ← 핵심 */
 }
 
 .logo-track img {
-  height: 120px;
+  height: 110px;
   width: auto;
   object-fit: contain;
+  flex-shrink: 0; /* ✅ 크기 줄지 않게 */
   opacity: 0.85;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
@@ -334,7 +337,14 @@ h2 {
   transform: scale(1.08);
 }
 
-
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
 
 /* Explore 링크 */
 .logo-link {
