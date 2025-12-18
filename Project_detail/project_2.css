@@ -1,0 +1,236 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #ffffff;
+  --black: #0d0d0d;
+  --gray: #f3f3f3;
+  --gold: #c8a961;
+  --transition: all 0.5s ease;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--white);
+  color: var(--black);
+  overflow-x: hidden;
+  line-height: 1.8;
+}
+
+/* ===== HEADER ===== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.9);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 60px;
+  z-index: 1000;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--black);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav a {
+  color: #333;
+  margin-left: 30px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+.nav a:hover,
+.nav a.active {
+  color: var(--gold);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-btn {
+  text-decoration: none;
+  color: var(--black);
+  border: 1px solid var(--black);
+  padding: 8px 18px;
+  transition: var(--transition);
+  font-size: 0.9rem;
+}
+
+.nav-btn:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--black);
+}
+
+/* ===== INTRO SPLIT ===== */
+.intro {
+  display: flex;
+  height: 100vh;
+  margin-top: 70px;
+}
+
+.intro-left, .intro-right {
+  flex: 1;
+}
+
+.intro-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gray);
+  padding: 80px;
+}
+
+.intro-text {
+  max-width: 500px;
+}
+
+.intro-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.intro-text .sub {
+  color: var(--gold);
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.intro-text .desc {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.intro-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== IMAGE STRIP ===== */
+.image-strip {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+}
+.image-strip img {
+  height: 500px;
+  flex-shrink: 0;
+  width: auto;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.image-strip img:hover {
+  transform: scale(1.03);
+}
+
+/* ===== PROJECT STORY ===== */
+.project-story {
+  background: var(--white);
+  padding: 120px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.story-inner {
+  max-width: 850px;
+  text-align: left;
+}
+.story-inner h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--gold);
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+}
+.story-inner p {
+  color: #444;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+/* META */
+.meta {
+  display: flex;
+  justify-content: space-between;
+  max-width: 850px;
+  margin-top: 60px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding-top: 20px;
+}
+.meta h4 {
+  font-family: 'Playfair Display', serif;
+  color: var(--gold);
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+.meta p {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* ===== VISUAL QUOTE ===== */
+.visual-quote {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+.visual-quote img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+.quote-text {
+  position: absolute;
+  bottom: 80px;
+  right: 80px;
+  font-family: 'Playfair Display', serif;
+  color: var(--white);
+  font-size: 1.6rem;
+  max-width: 450px;
+  line-height: 1.4;
+  text-align: right;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--black);
+  color: #aaa;
+  padding: 40px 60px;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.footer-inner a {
+  color: #aaa;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: var(--transition);
+}
+.footer-inner a:hover {
+  color: var(--gold);
+}

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOKHA | Design & Build</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">MOKHA</a>
+
+      <ul class="nav-menu">
+        <li><a href="about.html" data-en="About" data-kr="회사소개">About</a></li>
+        <li><a href="service.html" data-en="Services" data-kr="서비스">Services</a></li>
+        <li><a href="project.html" data-en="Projects" data-kr="프로젝트">Projects</a></li>
+        <li><a href="contact.html" data-en="Contact" data-kr="문의하기">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <div class="language-switch">
+          <button id="lang-en" class="active">EN</button>
+          <span>/</span>
+          <button id="lang-kr">KR</button>
+        </div>
+        <a href="#contactus" class="nav-btn">Contact us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO (CHAPTER STYLE) ===== -->
+  <section class="hero-split">
+    <div class="hero-left">
+      <video autoplay muted loop playsinline>
+        <source src="videos/interior.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-right">
+      <div class="hero-content">
+        <h1>MOKHA is the next evolution of RANSD</h1>
+        <p>
+          Based in Manhattan, MOKHA is expanding from design into fully integrated delivery.
+        </p>
+        <a href="#contact" class="btn-dark">Let’s Talk</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="split-section">
+    <div class="split-left">
+      <h2>Design. Build. Deliver.</h2>
+      <p>
+        MOKHA is a full-service design and build studio based in Manhattan.  
+        We create spaces that blend aesthetic sophistication with urban practicality.
+      </p>
+    </div>
+    <div class="split-right">
+      <img src="images/project1.jpg" alt="About Image" />
+    </div>
+  </section>
+
+  <!-- ===== DISCIPLINES (새로 추가된 부분) ===== -->
+  <section id="disciplines" class="disciplines-section">
+    <div class="disciplines-left">
+      <h4>Our Disciplines</h4>
+      <ul class="discipline-list">
+        <li data-image="images/discipline1.png">Design Build</li>
+        <li data-image="images/discipline2.jpg">Architecture</li>
+        <li data-image="images/discipline3.jpg">Construction</li>
+      </ul>
+    </div>
+    <div class="disciplines-right">
+      <div class="image-preview">
+        <img src="images/discipline1.jpg" alt="Preview" id="disciplinePreview">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section id="services" class="section gray-bg">
+    <div class="container">
+      <h2>Our Expertise</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Design & Architecture</h3>
+          <p>Functional and elegant environments tailored to your vision.</p>
+        </div>
+        <div class="service-card">
+          <h3>Construction Management</h3>
+          <p>Integrated solutions ensuring efficiency and excellence.</p>
+        </div>
+        <div class="service-card">
+          <h3>Renovation & Fit-out</h3>
+          <p>Transforming commercial interiors into elevated spaces.</p>
+        </div>
+        <div class="service-card">
+          <h3>Permitting & Compliance</h3>
+          <p>Expert navigation through NYC’s complex regulations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Featured Projects</h2>
+      <div class="projects-grid">
+        <img src="images/project1.jpg" alt="Project 1" />
+        <img src="images/project2.jpg" alt="Project 2" />
+        <img src="images/project3.jpg" alt="Project 3" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED BY / CLIENT LOGOS ===== -->
+  <section class="featured-logos">
+    <h2>Featured by</h2>
+
+    <div class="logo-slider">
+      <div class="logo-track">
+        <!-- 한 세트 -->
+        <img src="images/Client_Logo/LG.png" alt="LG logo">
+        <img src="images/Client_Logo/mirae.png" alt="Mirae Asset logo">
+        <img src="images/Client_Logo/bbq.png" alt="BBQ logo">
+        <img src="images/Client_Logo/ceragem.png" alt="Ceragem logo">
+
+        <!-- 두 번째 세트 (연결용) -->
+        <img src="images/Client_Logo/LG.png" alt="LG logo">
+        <img src="images/Client_Logo/mirae.png" alt="Mirae Asset logo">
+        <img src="images/Client_Logo/bbq.png" alt="BBQ logo">
+        <img src="images/Client_Logo/ceragem.png" alt="Ceragem logo">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LOCATIONS ===== -->
+    <section id="locations" class="section gray-bg">
+    <div class="container">
+        <h2>Our Locations</h2>
+        <p class="locations-intro">
+        MOKHA operates across multiple U.S. regions and internationally — ensuring consistency, quality, and precision no matter where your project is located.
+        </p>
+
+        <div class="locations-grid">
+        <div class="location-card">
+            <img src="images/manhattan.jpg" alt="NYC" />
+            <h3>New York</h3>
+            <p class="service-area">Service Area</p>
+            <p>1270 Broadway #906, New York, NY 10001</p>
+        </div>
+
+        <div class="location-card">
+            <img src="images/nj.jpg" alt="New Jersey" />
+            <h3>New Jersey</h3>
+            <p class="service-area">Service Area</p>
+            <p>2 Executive Drive #520, Fort Lee, NJ 07024</p>
+        </div>
+
+        <div class="location-card">
+            <img src="images/la.jpg" alt="Los Angeles" />
+            <h3>Los Angeles</h3>
+            <p class="service-area">Service Area</p>
+            <p>409 W Olympic Blvd Unit 313, Los Angeles, CA 90015</p>
+        </div>
+
+        <!-- ✅ Georgia를 Seoul 앞쪽으로 이동 -->
+        <div class="location-card">
+            <img src="images/ga.jpg" alt="Georgia" />
+            <h3>Georgia</h3>
+            <p class="service-area">Service Area</p>
+            <p>Savannah, GA 31401</p>
+        </div>
+
+        <div class="location-card">
+            <img src="images/seoul.jpg" alt="Seoul" />
+            <h3>Seoul</h3>
+            <p class="service-area">Service Area</p>
+            <p>109 Gukjegeumyung-ro, Yeongdeungpo-gu, Seoul, Republic of Korea</p>
+        </div>
+        </div>
+    </div>
+    </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="contact-cta">
+    <h2>Let’s Build Together</h2>
+    <p>Partner with MOKHA to create spaces that define New York’s future.</p>
+    <a href="mailto:info@mokha.com" class="btn-gold">Start Your Project</a>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">© 2025 MOKHA Design & Build</div>
+      <div class="footer-right">
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

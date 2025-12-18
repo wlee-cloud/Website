@@ -1,0 +1,257 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #0d0d0d;
+  --white: #ffffff;
+  --gray: #1a1a1a;
+  --gold: #c8a961;
+  --transition: all 0.4s ease;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--white);
+  background: var(--black);
+  overflow-x: hidden;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: var(--black);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px 60px;
+  display: flex;
+  align-items: center;
+  position: relative; /* 기준점 */
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--white);
+}
+
+/* ✅ 메뉴 중앙 고정 */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+.nav-menu a:hover { color: var(--gold); }
+
+/* ✅ 오른쪽 고정 (왼쪽으로 안 밀리게 수정) */
+.nav-right {
+  position: absolute;
+  right: 60px; /* 화면 오른쪽 여백 동일하게 */
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-btn {
+  text-decoration: none;
+  color: var(--white);
+  border: 1px solid var(--white);
+  padding: 8px 18px;
+  transition: var(--transition);
+}
+.nav-btn:hover { background: var(--gold); color: var(--black); }
+
+.language-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+.language-switch button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--white);
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+.language-switch button:hover { color: var(--gold); }
+.language-switch button.active { color: var(--gold); font-weight: 600; }
+
+/* ✅ 반응형 (모바일에서는 좌우 정렬로 돌아감) */
+@media (max-width: 900px) {
+  .nav-menu {
+    position: static;
+    transform: none;
+    justify-content: center;
+  }
+  .nav-right {
+    position: static;
+    transform: none;
+  }
+}
+
+/* ===== HERO ===== */
+.project-hero {
+  padding: 160px 60px 80px;
+  text-align: center;
+  background: var(--black);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.project-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+}
+
+.project-hero p {
+  color: #aaa;
+  font-size: 1.05rem;
+}
+
+/* ===== PROJECT LAYOUT ===== */
+.project-section {
+  display: flex;
+  gap: 60px;
+  padding: 80px 60px;
+}
+
+/* Sidebar filter */
+.project-filter {
+  flex: 0.3;
+  min-width: 200px;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  padding-right: 30px;
+}
+
+.project-filter h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.project-filter ul {
+  list-style: none;
+}
+
+.project-filter li {
+  margin-bottom: 15px;
+  color: #ccc;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.project-filter li:hover,
+.project-filter li.active {
+  color: var(--gold);
+}
+
+/* Project Grid */
+.project-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+}
+
+/* Card */
+.project-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.02);
+}
+
+.project-image {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.project-image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  transition: opacity 0.6s ease;
+}
+
+.project-image .hover-img {
+  opacity: 0;
+}
+
+.project-card:hover .hover-img {
+  opacity: 1;
+}
+
+.project-card:hover .default-img {
+  opacity: 0;
+}
+
+/* Info */
+.project-info {
+  margin-top: 20px;
+}
+
+.project-info h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.project-info p {
+  color: var(--gold);
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.project-info span {
+  color: #aaa;
+  font-size: 0.85rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: #777;
+  font-size: 0.9rem;
+}

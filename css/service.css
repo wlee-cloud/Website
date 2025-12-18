@@ -1,0 +1,245 @@
+* {margin:0; padding:0; box-sizing:border-box;}
+
+:root {
+  --black: #0e0e0e;
+  --white: #ffffff;
+  --gray: #f9f7f2;
+  --gold: #c8a961;
+  --transition: all 0.4s ease;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--black);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: var(--white);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.nav-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px 60px;
+  display: flex;
+  align-items: center;
+  position: relative; /* 기준점 */
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--black);
+}
+
+/* ✅ 메뉴 중앙 고정 */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--black);
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+.nav-menu a:hover { color: var(--gold); }
+
+/* ✅ 오른쪽 고정 (왼쪽으로 안 밀리게 수정) */
+.nav-right {
+  position: absolute;
+  right: 60px; /* 화면 오른쪽 여백 동일하게 */
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-btn {
+  text-decoration: none;
+  color: var(--black);
+  border: 1px solid var(--black);
+  padding: 8px 18px;
+  transition: var(--transition);
+}
+.nav-btn:hover { background: var(--black); color: var(--white); }
+
+.language-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+.language-switch button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--black);
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+.language-switch button:hover { color: var(--gold); }
+.language-switch button.active { color: var(--gold); font-weight: 600; }
+
+/* ✅ 반응형 (모바일에서는 좌우 정렬로 돌아감) */
+@media (max-width: 900px) {
+  .nav-menu {
+    position: static;
+    transform: none;
+    justify-content: center;
+  }
+  .nav-right {
+    position: static;
+    transform: none;
+  }
+}
+
+/* ===== HERO ===== */
+.hero-split {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 80px;
+  height: 100vh;
+}
+
+.hero-left,
+.hero-right {
+  flex: 1;
+  min-width: 350px;
+  position: relative;
+}
+
+.hero-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-right {
+  background: var(--gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+
+.hero-content {
+  max-width: 500px;
+}
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+.hero-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+.btn-dark {
+  background: var(--black);
+  color: var(--white);
+  padding: 12px 26px;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.btn-dark:hover {
+  background: var(--gold);
+}
+
+/* ===== PHASE SECTIONS ===== */
+.phase-section {
+  padding: 120px 60px;
+  background: var(--white);
+}
+.phase-section.light-bg {
+  background: var(--gray);
+}
+
+.phase-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 60px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.phase-inner.reverse {
+  flex-direction: row-reverse;
+}
+
+.phase-text {
+  flex: 1.2;
+  min-width: 350px;
+}
+
+.phase-image {
+  flex: 1;
+  min-width: 350px;
+}
+
+.phase-image img {
+  width: 100%;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+.phase-image img:hover {
+  transform: scale(1.03);
+}
+
+.phase-text h4 {
+  color: var(--gold);
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+.phase-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.phase-text p {
+  margin-bottom: 25px;
+  color: #444;
+}
+
+.phase-details h5 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: var(--black);
+}
+.phase-details ul {
+  list-style: disc;
+  padding-left: 20px;
+  color: #555;
+}
+.phase-details li {
+  margin-bottom: 6px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  background: var(--black);
+  color: #aaa;
+  padding: 40px 20px;
+  font-size: 0.9rem;
+}

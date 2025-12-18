@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOKHA | Park Avenue Office</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link rel="stylesheet" href="project_1.css" />
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">MOKHA</a>
+      <ul class="nav-menu">
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../service.html">Services</a></li>
+        <li><a href="../project.html" class="active">Projects</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="#login" class="nav-btn">Log In</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="project-hero">
+    <img src="../images/project/residential_1/project1a.png" alt="Park Avenue Office" class="hero-image">
+    <div class="hero-text">
+      <h1>Park Avenue Office</h1>
+      <p>New York, NY</p>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY SECTION ===== -->
+  <section class="gallery">
+    <div class="gallery-grid">
+      <img src="../images/project1b.jpg" alt="">
+      <img src="../images/project1c.jpg" alt="">
+      <img src="../images/project1d.jpg" alt="">
+    </div>
+  </section>
+
+  <!-- ===== FIXED INFO BAR ===== -->
+  <div class="fixed-info-bar">
+    <div class="bar-title">PARK AVENUE OFFICE</div>
+    <button id="infoToggle">SHOW MORE +</button>
+  </div>
+
+  <!-- ===== SLIDE-UP PANEL ===== -->
+  <div class="slide-panel" id="slidePanel">
+    <div class="panel-inner">
+      <h2>About the Project</h2>
+      <p>
+        Located in the heart of Manhattan, the Park Avenue Office project redefines the modern commercial interior.
+        MOKHA collaborated closely with the client to transform a traditional office space into a refined,
+        light-filled environment that encourages creativity, efficiency, and connection.
+      </p>
+      <p>
+        Natural tones, textured walls, and warm lighting blend sophistication with comfort.
+        Custom-built furniture and seamless details express the firm's design philosophy:
+        precision, timelessness, and authenticity.
+      </p>
+      <p>
+        The open floor plan maximizes spatial efficiency while maintaining a sense of calm.
+        Curved plaster partitions create visual flow between workstations and lounges,
+        with carefully placed greenery introducing warmth into the space.
+        Sustainable materials and high acoustic insulation ensure both comfort and durability.
+        The result is a workspace that reflects both MOKHA’s commitment to craft and the
+        client’s focus on innovation and well-being.
+      </p>
+
+      <div class="panel-meta">
+        <div>
+          <h4>Location</h4>
+          <p>New York, NY</p>
+        </div>
+        <div>
+          <h4>Type</h4>
+          <p>Commercial Interior</p>
+        </div>
+        <div>
+          <h4>Year</h4>
+          <p>2025</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== RELATED PROJECTS ===== -->
+  <section class="related-projects">
+    <h2>Featured Projects</h2>
+    <div class="related-grid">
+      <div class="related-card">
+        <img src="../images/project2a.jpg" alt="">
+        <h4>Seoul Gallery</h4>
+      </div>
+      <div class="related-card">
+        <img src="../images/project3a.jpg" alt="">
+        <h4>Hudson Loft</h4>
+      </div>
+      <div class="related-card">
+        <img src="../images/project4a.jpg" alt="">
+        <h4>The Harbor Hotel</h4>
+      </div>
+      <div class="related-card">
+        <img src="../images/project5a.jpg" alt="">
+        <h4>Jersey Residence</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <div>© 2025 MOKHA Design & Build</div>
+      <div>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== JS ===== -->
+  <script>
+    const infoToggle = document.getElementById('infoToggle');
+    const slidePanel = document.getElementById('slidePanel');
+    const fixedBar = document.querySelector('.fixed-info-bar');
+    const footerTarget = document.querySelector('.related-projects');
+
+    // 슬라이드 패널 열기/닫기
+    infoToggle.addEventListener('click', () => {
+      slidePanel.classList.toggle('open');
+      if (slidePanel.classList.contains('open')) {
+        infoToggle.textContent = 'SHOW LESS –';
+        document.body.style.overflow = 'hidden';
+      } else {
+        infoToggle.textContent = 'SHOW MORE +';
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Featured Projects 감지하여 바 숨기기
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            fixedBar.classList.add('hide');
+          } else {
+            fixedBar.classList.remove('hide');
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '0px 0px -150px 0px', // 화면 하단 여유 확보 (조기 감지)
+        threshold: 0, // 조금이라도 보이면 트리거
+      }
+    );
+
+    observer.observe(footerTarget);
+  </script>
+
+</body>
+</html>
