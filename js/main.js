@@ -47,3 +47,28 @@ disciplineItems.forEach(item => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".logo-track");
+  const clone = track.cloneNode(true); // 트랙 전체 복제
+  track.parentElement.appendChild(clone); // 바로 뒤에 복제 추가
+
+  // 두 트랙이 자연스럽게 이어지도록 스타일 조정
+  clone.style.position = "absolute";
+  clone.style.left = `${track.scrollWidth}px`;
+
+  // 애니메이션 프레임 루프
+  let position = 0;
+  const speed = 0.5; // ← ✅ 속도 조절 (숫자가 클수록 빠름)
+
+  function animate() {
+    position -= speed;
+    if (Math.abs(position) >= track.scrollWidth) position = 0;
+
+    track.style.transform = `translateX(${position}px)`;
+    clone.style.transform = `translateX(${position}px)`;
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+});
