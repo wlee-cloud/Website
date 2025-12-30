@@ -327,8 +327,19 @@ body {
   right: 80px;
   font-family: 'Playfair Display', serif;
   color: var(--white);
-  font-size: 1.6rem;
-  max-width: 450px;
+  font-size: 1.5rem;
+  max-width: 730px;
+  line-height: 1.4;
+  text-align: right;
+}
+.quote-text1 {
+  position: absolute;
+  bottom: 50px;
+  right: 80px;
+  font-family: 'Playfair Display', serif;
+  color: var(--white);
+  font-size: 1.2rem;
+  max-width: 650px;
   line-height: 1.4;
   text-align: right;
 }
