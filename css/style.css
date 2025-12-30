@@ -361,7 +361,7 @@ h2 {
 
 .logo-link a span {
   margin-left: 8px;
-  transition: transform 0.5s ease;
+  transition: transform 0.7s ease;
 }
 
 .logo-link a:hover {
