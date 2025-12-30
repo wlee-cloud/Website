@@ -289,6 +289,57 @@ body {
   }
 }
 
+/* ===== BEFORE/AFTER SLIDER ===== */
+.before-after-slider {
+  width: 100%;
+  max-width: 1080px;
+  margin: -10px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.ba-slider {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.ba-slides {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.ba-slides img {
+  width: 100%;
+  flex: 0 0 100%;
+  object-fit: cover;
+  display: block;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* 화살표 버튼 */
+.ba-slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.6);
+  border: none;
+  color: #000;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 6px 12px;
+  z-index: 10;
+  transition: background 0.2s ease;
+}
+.ba-slider button:hover {
+  background: rgba(255,255,255,0.85);
+}
+.ba-prev { left: 10px; }
+.ba-next { right: 10px; }
+
 /* ===== PROJECT STORY ===== */
 .project-story {
   background: var(--white);
