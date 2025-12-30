@@ -8,6 +8,23 @@ document.addEventListener('DOMContentLoaded', () => {
   let index = 0;
   const total = images.length;
 
+  function update() {
+    slides.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[index].classList.add('active');
+  }
+
+  function goTo(i) {
+    index = (i + total) % total;
+    update();
+  }
+
+  function nextSlide() { goTo(index + 1); }
+  function prevSlide() { goTo(index - 1); }
+
+  next.addEventListener('click', nextSlide);
+  prev.addEventListener('click', prevSlide);
+
   // 자동 슬라이드
   let auto = setInterval(nextSlide, 3000);
   slider.addEventListener('mouseenter', () => clearInterval(auto));
