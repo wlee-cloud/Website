@@ -84,8 +84,10 @@ body {
   margin-top: 70px;
 }
 
-.intro-left, .intro-right {
+.intro-left,
+.intro-right {
   flex: 1;
+  min-height: 100vh; /* ✅ 높이 강제 고정 */
 }
 
 .intro-left {
@@ -118,11 +120,52 @@ body {
   line-height: 1.8;
 }
 
-.intro-right img {
+/* ===== INTRO-RIGHT SLIDER ===== */
+.intro-right {
+  position: relative;
+  width: 50%;
+  overflow: hidden;
+}
+
+.project-slider {
+  position: absolute;
+  inset: 0; /* ✅ 부모 영역 전체 채움 */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.project-slider .slides {
+  display: flex;
+  height: 100%;
+  transition: transform 0.6s ease-in-out;
+}
+
+.project-slider .slides img {
+  flex: 0 0 100%;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
+/* 화살표 버튼 */
+.project-slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.6);
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 8px 14px;
+  z-index: 10;
+  transition: background 0.2s ease;
+}
+.project-slider button:hover {
+  background: rgba(255, 255, 255, 0.85);
+}
+.project-slider .prev { left: 20px; }
+.project-slider .next { right: 20px; }
 
 /* ===== IMAGE STRIP ===== */
 .image-strip {
