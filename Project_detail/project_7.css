@@ -173,7 +173,7 @@ body {
   justify-content: center; /* ✅ 가운데 정렬 */
   gap: 10px;
   overflow-x: hidden; /* ✅ 스크롤 강제 제거 */
-  padding: 10px 0px;
+  padding: 10px 0;
   flex-wrap: wrap; /* ✅ 화면 좁을 때 자동 줄바꿈 */
 }
 
@@ -288,6 +288,57 @@ body {
     height: auto;
   }
 }
+
+/* ===== BEFORE/AFTER SLIDER ===== */
+.before-after-slider {
+  width: 100%;
+  max-width: 1080px;
+  margin: 60px auto;;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.ba-slider {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.ba-slides {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.ba-slides img {
+  width: 100%;
+  flex: 0 0 100%;
+  object-fit: cover;
+  display: block;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* 화살표 버튼 */
+.ba-slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.6);
+  border: none;
+  color: #000;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 6px 12px;
+  z-index: 10;
+  transition: background 0.2s ease;
+}
+.ba-slider button:hover {
+  background: rgba(255,255,255,0.85);
+}
+.ba-prev { left: 10px; }
+.ba-next { right: 10px; }
 
 /* ===== PROJECT STORY ===== */
 .project-story {
