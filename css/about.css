@@ -38,7 +38,7 @@ body {
   padding: 16px 60px;
   display: flex;
   align-items: center;
-  position: relative; /* 기준점 */
+  position: relative;
 }
 
 .logo {
@@ -49,7 +49,7 @@ body {
   color: var(--white);
 }
 
-/* ✅ 메뉴 중앙 고정 */
+/* 중앙 메뉴 */
 .nav-menu {
   display: flex;
   list-style: none;
@@ -65,12 +65,13 @@ body {
   font-size: 0.95rem;
   transition: var(--transition);
 }
-.nav-menu a:hover { color: var(--gold); }
+.nav-menu a:hover,
+.nav-menu a.active { color: var(--gold); }
 
-/* ✅ 오른쪽 고정 (왼쪽으로 안 밀리게 수정) */
+/* 오른쪽 버튼 */
 .nav-right {
   position: absolute;
-  right: 60px; /* 화면 오른쪽 여백 동일하게 */
+  right: 60px;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
@@ -104,19 +105,6 @@ body {
 }
 .language-switch button:hover { color: var(--gold); }
 .language-switch button.active { color: var(--gold); font-weight: 600; }
-
-/* ✅ 반응형 (모바일에서는 좌우 정렬로 돌아감) */
-@media (max-width: 900px) {
-  .nav-menu {
-    position: static;
-    transform: none;
-    justify-content: center;
-  }
-  .nav-right {
-    position: static;
-    transform: none;
-  }
-}
 
 /* ===== HERO ===== */
 .about-hero {
@@ -196,23 +184,117 @@ body {
   font-size: 0.95rem;
 }
 
+/* ===== ORGANIZATION SECTION ===== */
+.organization-section {
+  padding: 100px 60px 80px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.organization-section h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--gold);
+  font-size: 1.6rem;
+  margin-bottom: 40px;
+}
+
+.organization-section img {
+  width: 100%;
+  max-width: 1200px; /* ✅ 더 크게 확대 */
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+/* ===== ORGANIZATION TOOLTIP ===== */
+.organization-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.org-image {
+  width: 100%;
+  max-width: 1200px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 🔥 핫존: 실제로는 투명한 영역 */
+/* Tooltip 기본 */
+.tooltip {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(0, 0, 0, 0.88);
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 12px 16px;
+  border-radius: 8px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -120%);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  max-width: 400px;
+  z-index: 9999;
+}
+
+.tooltip.visible {
+  opacity: 1;
+  transform: translate(-50%, -100%);
+}
+
+/* 왼쪽 이미지 */
+.tooltip img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* 오른쪽 텍스트 */
+.tooltip div {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* 🔥 핫존 */
+.hotspot {
+  position: absolute;
+  cursor: pointer;
+  background: rgba(255, 0, 0, 0); /* 테스트 시 0.2로 변경 */
+  z-index: 5;
+}
+
+/* 예시 좌표 (조직도에서 RANSD 위치에 맞게 조정 필요) */
+.hotspot.ransd {
+  top: 12%;
+  left: 48%;
+  width: 230px;
+  height: 100px;
+}
+
 /* ===== GALLERY ===== */
 .about-gallery {
-  padding: 60px;
+  padding: 80px 60px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
 }
 
 .gallery-grid img {
   width: 100%;
-  height: 400px;
+  height: 420px;
   object-fit: cover;
   transition: var(--transition);
+  border-radius: 6px;
 }
 
 .gallery-grid img:hover {

@@ -21,10 +21,10 @@
       <a href="index.html" class="logo">MOKHA</a>
 
       <ul class="nav-menu">
-        <li><a href="about.html" data-en="About" data-kr="회사소개">About</a></li>
-        <li><a href="service.html" data-en="Services" data-kr="서비스">Services</a></li>
-        <li><a href="project.html" data-en="Projects" data-kr="프로젝트">Projects</a></li>
-        <li><a href="contact.html" data-en="Contact" data-kr="문의하기">Contact</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
 
       <div class="nav-right">
@@ -38,7 +38,7 @@
     </div>
   </nav>
 
-  <!-- ===== ABOUT HERO SECTION ===== -->
+  <!-- ===== HERO SECTION ===== -->
   <section class="about-hero">
     <div class="hero-inner">
       <h1>Our Story</h1>
@@ -49,7 +49,7 @@
     </div>
   </section>
 
-  <!-- ===== ABOUT BODY SECTION ===== -->
+  <!-- ===== ABOUT BODY ===== -->
   <section class="about-content">
     <div class="content-left">
       <h2>Thoughtful Design. Purposeful Execution.</h2>
@@ -89,6 +89,52 @@
       </div>
     </div>
   </section>
+
+  <!-- ✅ ORGANIZATION SECTION -->
+  <section class="organization-section">
+    <h3>Organization Structure</h3>
+
+    <div class="organization-wrapper">
+      <img src="images/Organization.png" alt="Organization Chart" class="org-image">
+
+      <!-- 🔥 핫존 -->
+      <div class="hotspot ransd" 
+        data-img="images/Jae.png"
+        data-info= "RANSD Partners Architecture, Engineering, and Management offices located in New York, New Jersey, Los Angeles, Georgia, and Seoul.">
+      </div>
+    </div>
+
+    <!-- Tooltip -->
+    <div class="tooltip" id="tooltip">
+      <img id="tooltip-img" src="" alt="">
+      <div id="tooltip-text"></div>
+    </div>
+  </section>
+
+  <script>
+    const tooltip = document.getElementById("tooltip");
+    const tooltipImg = document.getElementById("tooltip-img");
+    const tooltipText = document.getElementById("tooltip-text");
+    const hotspots = document.querySelectorAll(".hotspot");
+
+    hotspots.forEach(hotspot => {
+      hotspot.addEventListener("mouseenter", () => {
+        tooltipImg.src = hotspot.getAttribute("data-img");
+        tooltipText.innerHTML = hotspot.getAttribute("data-info");
+        tooltip.classList.add("visible");
+      });
+
+      hotspot.addEventListener("mousemove", e => {
+        tooltip.style.left = e.pageX + "px";
+        tooltip.style.top = (e.pageY - 20) + "px";
+      });
+
+      hotspot.addEventListener("mouseleave", () => {
+        tooltip.classList.remove("visible");
+      });
+    });
+  </script>
+
 
   <!-- ===== IMAGE GALLERY ===== -->
   <section class="about-gallery">
