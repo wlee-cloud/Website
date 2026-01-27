@@ -277,60 +277,76 @@ body {
   height: 90px;
 }
 
+/* RANSD ARCHITECTURE P.C */
 .hotspot.ransd-architecture {
-  top: 38%;
-  left: 42%;
-  width: 260px;
-  height: 80px;
-}
-
-.hotspot.mokha {
-  top: 38%;
-  left: 68%;
-  width: 240px;
-  height: 80px;
-}
-
-.hotspot.sbj {
-  top: 62%;
-  left: 20%;
-  width: 180px;
-  height: 70px;
-}
-
-.hotspot.toma {
-  top: 62%;
+  top: 33%;
   left: 32%;
-  width: 180px;
-  height: 70px;
+  width: 260px;
+  height: 110px;
 }
 
-.hotspot.lera {
-  top: 62%;
-  left: 48%;
-  width: 200px;
-  height: 70px;
+/* MOKHA INC */
+.hotspot.mokha {
+  top: 35%;
+  left: 75%;
+  width: 230px;
+  height: 110px;
 }
 
-.hotspot.hkc {
-  top: 62%;
-  left: 60%;
-  width: 200px;
-  height: 70px;
-}
+/* =====================
+   SECOND LEVEL
+===================== */
 
-.hotspot.real {
-  top: 62%;
-  left: 72%;
-  width: 200px;
-  height: 70px;
-}
-
+/* GENERAL CONTRACTOR */
 .hotspot.gc {
-  top: 62%;
-  left: 85%;
-  width: 220px;
-  height: 70px;
+  top: 63%;
+  left: 73%;
+  width: 260px;
+  height: 90px;
+}
+
+/* =====================
+   THIRD LEVEL (PARTNERS)
+===================== */
+
+/* SBJ */
+.hotspot.sbj {
+  top: 77%;
+  left: 10%;
+  width: 140px;
+  height: 80px;
+}
+
+/* TOMA */
+.hotspot.toma {
+  top: 77%;
+  left: 22%;
+  width: 140px;
+  height: 80px;
+}
+
+/* LERA */
+.hotspot.lera {
+  top: 77%;
+  left: 41%;
+  width: 140px;
+  height: 80px;
+}
+
+/* HKC */
+.hotspot.hkc {
+  top: 77%;
+  left: 55%;
+  width: 140px;
+  height: 80px;
+}
+
+/* REAL */
+.hotspot.real {
+  top: 77%;
+  left: 63%;
+  width: 140px;
+  height: 80px;
 }
 
 /* ===== GALLERY ===== */
