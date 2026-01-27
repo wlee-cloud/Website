@@ -274,7 +274,63 @@ body {
   top: 12%;
   left: 48%;
   width: 230px;
-  height: 100px;
+  height: 90px;
+}
+
+.hotspot.ransd-architecture {
+  top: 38%;
+  left: 42%;
+  width: 260px;
+  height: 80px;
+}
+
+.hotspot.mokha {
+  top: 38%;
+  left: 68%;
+  width: 240px;
+  height: 80px;
+}
+
+.hotspot.sbj {
+  top: 62%;
+  left: 20%;
+  width: 180px;
+  height: 70px;
+}
+
+.hotspot.toma {
+  top: 62%;
+  left: 32%;
+  width: 180px;
+  height: 70px;
+}
+
+.hotspot.lera {
+  top: 62%;
+  left: 48%;
+  width: 200px;
+  height: 70px;
+}
+
+.hotspot.hkc {
+  top: 62%;
+  left: 60%;
+  width: 200px;
+  height: 70px;
+}
+
+.hotspot.real {
+  top: 62%;
+  left: 72%;
+  width: 200px;
+  height: 70px;
+}
+
+.hotspot.gc {
+  top: 62%;
+  left: 85%;
+  width: 220px;
+  height: 70px;
 }
 
 /* ===== GALLERY ===== */
