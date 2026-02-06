@@ -271,10 +271,18 @@ body {
 
 /* 예시 좌표 (조직도에서 RANSD 위치에 맞게 조정 필요) */
 .hotspot.ransd {
-  top: 12%;
-  left: 48%;
-  width: 230px;
-  height: 90px;
+  top: 8%;
+  left: 38%;
+  width: 270px;
+  height: 120px;
+}
+
+/* RANSD ARCHITECTURE P.C */
+.hotspot.architecture {
+  top: 20%;
+  left: 18%;
+  width: 260px;
+  height: 110px;
 }
 
 /* RANSD ARCHITECTURE P.C */
